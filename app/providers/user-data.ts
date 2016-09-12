@@ -30,12 +30,14 @@ export class UserData {
     this.storage.set(this.HAS_LOGGED_IN, true);
     this.setUsername(username);
     this.events.publish('user:login');
+    return true;
   }
 
   signup(username) {
     this.storage.set(this.HAS_LOGGED_IN, true);
     this.setUsername(username);
     this.events.publish('user:signup');
+    return true;
   }
 
   logout() {

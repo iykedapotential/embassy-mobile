@@ -15,13 +15,23 @@
     </div>
 
     <form #signupForm="ngForm" novalidate>
+
       <ion-item>
-        <ion-label floating primary>Username</ion-label>
-        <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+        <ion-label floating primary>Phone Number</ion-label>
+        <ion-input [(ngModel)]="signup.phonenumber" name="phonenumber" type="text" #phonenumber="ngModel" required>
         </ion-input>
       </ion-item>
-      <p [hidden]="username.valid || submitted == false" danger padding-left>
-        Username is required
+      <p [hidden]="phonenumber.valid || submitted == false" danger padding-left>
+        PhoneNumber is required
+      </p>
+
+      <ion-item>
+        <ion-label floating primary>Email Address</ion-label>
+        <ion-input [(ngModel)]="signup.email" name="email" type="text" #email="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="email.valid || submitted == false" danger padding-left>
+        Email Address is required
       </p>
 
       <ion-item>
@@ -34,7 +44,11 @@
       </p>
 
       <div padding>
-        <button (click)="onSignup(signupForm)" type="submit" primary block>Create</button>
+        <button (click)="onSignup(signupForm)" type="submit" primary>Sign Up</button>
+      </div>
+      <p style="text-align: center">Already Registered? Sign In</p>
+      <div padding>
+        <button (click)="onSignIn()" type="submit" primary>Sign In</button>
       </div>
     </form>
   </ion-list>

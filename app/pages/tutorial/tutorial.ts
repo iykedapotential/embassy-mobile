@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { MenuController, NavController } from 'ionic-angular';
 
-import { TabsPage } from '../tabs/tabs';
+import { LoginPage } from '../login/login';
 
 
 interface Slide {
@@ -21,25 +21,25 @@ export class TutorialPage {
   constructor(public navCtrl: NavController, public menu: MenuController) {
     this.slides = [
       {
-        title: 'Welcome to <b>ICA</b>',
-        description: 'The <b>Ionic Conference App</b> is a practical preview of the Ionic Framework in action, and a demonstration of proper code use.',
-        image: 'img/ica-slidebox-img-1.png',
+        title: 'Royalty Mobile App',
+        description: 'Quick Access to the WorldChangers Resources',
+        image: 'img/pp.jpeg',
       },
       {
-        title: 'What is Ionic?',
-        description: '<b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.',
-        image: 'img/ica-slidebox-img-2.png',
+        title: 'WorldChangers e-Resources',
+        description: 'Have access to the HouseKeepers audio messages, video messages and other resources.',
+        image: 'img/pp.jpeg',
       },
       {
-        title: 'What is Ionic Platform?',
-        description: 'The <b>Ionic Platform</b> is a cloud platform for managing and scaling Ionic apps with integrated services like push notifications, native builds, user auth, and live updating.',
-        image: 'img/ica-slidebox-img-3.png',
+        title: 'Online Payments',
+        description: 'Online Payment Platform for your tithes and offering',
+        image: 'img/pp.jpeg',
       }
     ];
   }
 
   startApp() {
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.push(LoginPage);
   }
 
   onSlideChangeStart(slider) {

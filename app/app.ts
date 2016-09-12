@@ -30,7 +30,7 @@ class ConferenceApp {
   // the left menu only works after login
   // the login page disables the left menu
   appPages: PageObj[] = [
-    { title: 'Schedule', component: TabsPage, icon: 'calendar' },
+    { title: 'Home', component: TabsPage, icon: 'calendar' },
     { title: 'Speakers', component: TabsPage, index: 1, icon: 'contacts' },
     { title: 'Map', component: TabsPage, index: 2, icon: 'map' },
     { title: 'About', component: TabsPage, index: 3, icon: 'information-circle' },
@@ -75,16 +75,14 @@ class ConferenceApp {
     // we wouldn't want the back button to show in this scenario
     if (page.index) {
       this.nav.setRoot(page.component, {tabIndex: page.index});
-
-    } else {
-      this.nav.setRoot(page.component);
-    }
-
-    if (page.title === 'Logout') {
+    } else if (page.title === 'Logout') {
       // Give the menu time to close before changing to logged out
       setTimeout(() => {
         this.userData.logout();
+        this.nav.setRoot(LoginPage);
       }, 1000);
+    } else {
+      this.nav.setRoot(page.component);
     }
   }
 
